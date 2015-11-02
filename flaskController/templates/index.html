@@ -1,0 +1,73 @@
+<html>
+<title>Monitor and Controller</title>
+<body>
+	<div>
+	<!-- Change the IP address below to the Intel Edison's IP-->
+	    <img src="http://192.168.0.24:8080/?action=stream"/>
+	</div>
+	<div style="color:#000FFF">
+	<h3>
+	<!-- Lazy way of showing Sensor values on the UI using flash-->
+	{% with messages = get_flashed_messages() %}
+      {% if messages %}
+	      <ul class=flashes>
+		      {% for message in messages %}
+		     	 <li>{{ message }}</li>
+		      {% endfor %}
+	      </ul>
+      {% endif %}
+    {% endwith %}
+    </h3>
+	</div>
+<form action="/controlit" method="post">
+<table style = "width:100%">
+	<tr>
+		<td></td>
+		<td>
+		 <input type="submit" value="Foward" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 180%"></input>
+		<td></td>
+		<td>
+		 <input type="submit" value="Fast" name ="buttonPress" style = "height:150px;width:150px; 
+color:#a7cb00; font-weight:bold;font-size: 200%"></input>
+		</td>
+
+	</tr>
+	<tr>
+		<td>
+		 <input type="submit" value="Left" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 200%"></input>
+		</td>
+		<td>
+		 <input type="submit" value="Back" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 200%"></input>
+		</td>
+		<td>
+		 <input type="submit" value="Right" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 200%"></input>
+		<td>
+		 <input type="submit" value="Slow" name ="buttonPress" style = "height:150px;width:150px; color:#f00; 
+font-weight:bold; font-size: 200%"></input>
+		</td>
+	</tr>
+		<tr>
+		<td>
+		 <input type="submit" value="Sensor" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 200%"></input>
+		</td>
+		<td>
+		 <input type="submit" value="PostIoT" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 200%"></input>
+		</td>
+		<td>
+		 <input type="submit" value="Snap" name ="buttonPress" style = 
+"height:150px;width:150px;font-weight:bold;font-size: 200%"></input>
+		</td>
+
+	</tr>
+
+</table>
+</form>
+</body>
+</html>
+
